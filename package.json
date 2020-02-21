@@ -1,0 +1,24 @@
+{
+  "name": "cypress-ci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limion/cypress-ci.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/limion/cypress-ci/issues"
+  },
+  "homepage": "https://github.com/limion/cypress-ci#readme",
+  "devDependencies": {
+    "cypress": "^4.0.2"
+  }
+}
