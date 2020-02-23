@@ -1,6 +1,7 @@
+os: linux
 language: node_js
 node_js:
-  - "lts/*"
+  - 'lts/*'
 
 addons:
   chrome: stable
@@ -23,3 +24,7 @@ install:
 
 script:
   - npm run cy:run
+
+branches:
+  only:
+    - master
