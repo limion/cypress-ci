@@ -1,5 +1,8 @@
 name: E2E Chrome headless
-on: [push]
+on:
+  push:
+    branches:
+      - develop
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
