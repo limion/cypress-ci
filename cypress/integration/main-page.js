@@ -7,7 +7,7 @@ context('Test Simple React App', () => {
 
   describe('When user opens the main page', () => {
     it('Learn React link should be visible', () => {
-      cy.contains('Learn React')
+      cy.contains('Learn React').should('be.visible');
     })
   })
 })
