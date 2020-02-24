@@ -4,22 +4,37 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "cy:open": "cypress open",
     "cy:run": "cypress run --record --key a3956a3f-907a-4eea-9317-f4193fd0dcf7"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/limion/cypress-ci.git"
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.1",
+    "@testing-library/user-event": "^7.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.4.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/limion/cypress-ci/issues"
-  },
-  "homepage": "https://github.com/limion/cypress-ci#readme",
   "devDependencies": {
     "cypress": "^4.0.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
