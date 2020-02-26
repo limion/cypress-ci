@@ -6,9 +6,7 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    env:
-      BASE_REF: ${{github.base_ref}}
-      EVENT: ${{github.event}}
+   
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -22,7 +20,12 @@ jobs:
         run: CI=true npm run test     
 
       - run: echo ${BASE_REF}
+        env:
+          BASE_REF: ${{github.base_ref}}
+
       - run: echo ${EVENT}
+        env:
+          EVENT: ${{github.event}}
 
       - name: Run e2e tests (Cypruss run)
         uses: cypress-io/github-action@v1
