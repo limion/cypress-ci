@@ -1,0 +1,35 @@
+name: E2E Chrome headless
+on:
+  push:
+    branches-ignore:
+      - 'master'
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+    
+      - name: Install dependencies
+        uses: cypress-io/github-action@v1
+        with:
+          runTests: false
+
+      - name: Run unit tests
+        run: CI=true npm run test     
+
+      - name: Run e2e tests (Cypruss run)
+        uses: cypress-io/github-action@v1
+        with:
+          install: false
+          build: npm run build
+          start: npm run server
+          wait-on: 'http://localhost:3000'
+          browser: chrome
+          headless: true
+          record: true
+        env:
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
