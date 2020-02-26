@@ -11,9 +11,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
     
-      - name: Cypruss run
+      - name: Install dependencies
         uses: cypress-io/github-action@v1
         with:
+          runTests: false
+
+      - name: Run unit tests
+        run: CI=true npm run test     
+
+      - name: Run e2e tests (Cypruss run)
+        uses: cypress-io/github-action@v1
+        with:
+          install: false
           build: npm run build
           start: npm run server
           wait-on: 'http://localhost:3000'
