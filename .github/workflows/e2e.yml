@@ -19,8 +19,12 @@ jobs:
       - name: Run unit tests
         run: CI=true npm run test     
 
+      - run: echo ${{github.base_ref}}
+      - run: echo ${{github.event}}
+
       - name: Run e2e tests (Cypruss run)
         uses: cypress-io/github-action@v1
+        if: github.base_ref == 'refs/heads/develop'
         with:
           install: false
           build: npm run build
